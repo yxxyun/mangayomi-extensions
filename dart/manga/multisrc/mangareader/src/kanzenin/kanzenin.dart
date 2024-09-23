@@ -6,7 +6,7 @@ Source _kanzeninSource = Source(
   name: "Kanzenin",
   baseUrl: "https://kanzenin.xyz",
   lang: "id",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "mangareader",
   iconUrl:
       "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/kanzenin/icon.png",

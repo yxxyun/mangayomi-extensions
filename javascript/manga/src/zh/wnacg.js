@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://www.wnacg.com/favicon.ico",
     "typeSource": "single",
     "isManga": true,
-    "isNsfw": true,
+    "isNsfw": false,
     "version": "0.0.2",
     "dateFormat": "",
     "dateFormatLocale": "",

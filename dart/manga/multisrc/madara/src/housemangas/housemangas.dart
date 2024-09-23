@@ -5,9 +5,9 @@ Source _housemangasSource = Source(
     name: "HouseMangas",
     baseUrl: "https://housemangas.com",
     lang: "es",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/housemangas/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"es"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/housemangas/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "es");

@@ -5,9 +5,9 @@ Source _catzaaSource = Source(
     name: "Catzaa",
     baseUrl: "https://catzaa.com",
     lang: "th",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/catzaa/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"th"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/catzaa/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "th");

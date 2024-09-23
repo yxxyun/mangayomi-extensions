@@ -5,9 +5,9 @@ Source _opiatoonSource = Source(
     name: "Opiatoon",
     baseUrl: "https://opiatoon.biz",
     lang: "tr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/opiatoon/icon.png",
-    dateFormat:"d MMMM",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/opiatoon/icon.png",
+    dateFormat: "d MMMM",
+    dateFormatLocale: "tr");

@@ -5,9 +5,9 @@ Source _unitoonSource = Source(
     name: "Unitoon",
     baseUrl: "https://lectorunitoon.com",
     lang: "es",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/unitoon/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"es"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/unitoon/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "es");

@@ -5,9 +5,9 @@ Source _sereinscanSource = Source(
     name: "Serein Scan",
     baseUrl: "https://sereinscan.com",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/sereinscan/icon.png",
-    dateFormat:"MMM d, yyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/sereinscan/icon.png",
+    dateFormat: "MMM d, yyy",
+    dateFormatLocale: "tr");

@@ -5,9 +5,9 @@ Source _worldmanhwasSource = Source(
     name: "WorldManhwas",
     baseUrl: "https://worldmanhwas.zone",
     lang: "id",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/worldmanhwas/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"id"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/worldmanhwas/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "id");

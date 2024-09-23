@@ -5,9 +5,9 @@ Source _histoiredhentaiSource = Source(
     name: "HistoireDHentai",
     baseUrl: "https://hhentai.fr",
     lang: "fr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/histoiredhentai/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"fr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/histoiredhentai/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "fr");

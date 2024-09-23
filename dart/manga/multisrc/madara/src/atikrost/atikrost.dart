@@ -5,9 +5,9 @@ Source _atikrostSource = Source(
     name: "Atikrost",
     baseUrl: "https://www.atikrost.com",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/atikrost/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/atikrost/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "tr");

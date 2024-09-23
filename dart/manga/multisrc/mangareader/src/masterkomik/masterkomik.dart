@@ -5,9 +5,9 @@ Source _masterkomikSource = Source(
     name: "Tenshi.id",
     baseUrl: "https://tenshi.id",
     lang: "id",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/masterkomik/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"id-id"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/masterkomik/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "id-id");

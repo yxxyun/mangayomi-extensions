@@ -8,7 +8,7 @@ String _iconUrl =
     "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/src/all/comick/icon.png";
 const _apiUrl = 'https://api.comick.fun';
 const _baseUrl = 'https://comick.app';
-const _isNsfw = true;
+const _isNsfw = false;
 
 List<String> _languages = [
   "all",

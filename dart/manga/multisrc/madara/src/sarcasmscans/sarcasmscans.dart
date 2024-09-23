@@ -5,9 +5,9 @@ Source _sarcasmscansSource = Source(
     name: "Sarcasm Scans",
     baseUrl: "https://sarcasmscans.com",
     lang: "tr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/sarcasmscans/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/sarcasmscans/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "tr");

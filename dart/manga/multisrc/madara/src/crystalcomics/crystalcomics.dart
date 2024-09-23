@@ -5,9 +5,9 @@ Source _crystalcomicsSource = Source(
     name: "Crystal Comics",
     baseUrl: "https://crystalcomics.com",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/crystalcomics/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/crystalcomics/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "pt-br");

@@ -5,9 +5,9 @@ Source _topreadmanhwaSource = Source(
     name: "TopReadManhwa",
     baseUrl: "https://topreadmanhwa.com",
     lang: "en",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/topreadmanhwa/icon.png",
-    dateFormat:"MM/dd/yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/topreadmanhwa/icon.png",
+    dateFormat: "MM/dd/yyyy",
+    dateFormatLocale: "en");

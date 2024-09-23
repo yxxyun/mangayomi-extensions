@@ -5,9 +5,9 @@ Source _sssscanlatorSource = Source(
     name: "SSSScanlator",
     baseUrl: "https://sssscanlator.com.br",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/sssscanlator/icon.png",
-    dateFormat:"MMMMM dd, yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/sssscanlator/icon.png",
+    dateFormat: "MMMMM dd, yyyy",
+    dateFormatLocale: "pt-br");

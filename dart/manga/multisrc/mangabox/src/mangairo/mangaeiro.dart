@@ -6,7 +6,7 @@ Source _mangairoSource = Source(
   name: "Mangairo",
   baseUrl: "https://h.mangairo.com",
   lang: "en",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "mangabox",
   iconUrl:
       "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangabox/src/mangairo/icon.png",

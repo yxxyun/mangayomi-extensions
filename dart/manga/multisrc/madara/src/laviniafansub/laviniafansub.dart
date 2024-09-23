@@ -5,9 +5,9 @@ Source _laviniafansubSource = Source(
     name: "Lavinia Fansub",
     baseUrl: "https://laviniafansub.com",
     lang: "tr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/laviniafansub/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/laviniafansub/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "en");

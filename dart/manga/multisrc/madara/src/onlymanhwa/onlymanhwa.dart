@@ -5,9 +5,9 @@ Source _onlymanhwaSource = Source(
     name: "OnlyManhwa",
     baseUrl: "https://onlymanhwa.org",
     lang: "en",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/onlymanhwa/icon.png",
-    dateFormat:"d 'de' MMMM 'de' yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/onlymanhwa/icon.png",
+    dateFormat: "d 'de' MMMM 'de' yyyy",
+    dateFormatLocale: "en");

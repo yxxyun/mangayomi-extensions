@@ -5,9 +5,9 @@ Source _manhuatopSource = Source(
     name: "ManhuaTop",
     baseUrl: "https://manhuatop.org",
     lang: "en",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhuatop/icon.png",
-    dateFormat:"MM/dd/yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhuatop/icon.png",
+    dateFormat: "MM/dd/yyyy",
+    dateFormatLocale: "en");

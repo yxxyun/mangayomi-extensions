@@ -5,9 +5,9 @@ Source _rh2plusmangaSource = Source(
     name: "Rh2PlusManga",
     baseUrl: "https://www.rh2plusmanga.com",
     lang: "th",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/rh2plusmanga/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"th"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/rh2plusmanga/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "th");

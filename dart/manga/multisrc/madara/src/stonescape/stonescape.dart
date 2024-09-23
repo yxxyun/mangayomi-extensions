@@ -5,9 +5,9 @@ Source _stonescapeSource = Source(
     name: "StoneScape",
     baseUrl: "https://stonescape.xyz",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/stonescape/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/stonescape/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "en");

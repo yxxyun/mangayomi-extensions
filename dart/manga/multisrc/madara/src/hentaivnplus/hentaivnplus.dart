@@ -5,9 +5,9 @@ Source _hentaivnplusSource = Source(
     name: "HentaiVN.plus",
     baseUrl: "https://hentaivn.plus",
     lang: "vi",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hentaivnplus/icon.png",
-    dateFormat:"MM/dd/yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hentaivnplus/icon.png",
+    dateFormat: "MM/dd/yyyy",
+    dateFormatLocale: "en");

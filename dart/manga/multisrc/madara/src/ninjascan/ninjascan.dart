@@ -5,9 +5,9 @@ Source _ninjascanSource = Source(
     name: "Ninja Scan",
     baseUrl: "https://ninjacomics.xyz",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/ninjascan/icon.png",
-    dateFormat:"dd 'de' MMMMM 'de' yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/ninjascan/icon.png",
+    dateFormat: "dd 'de' MMMMM 'de' yyyy",
+    dateFormatLocale: "pt-br");

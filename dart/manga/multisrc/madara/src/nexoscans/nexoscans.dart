@@ -5,9 +5,9 @@ Source _nexoscansSource = Source(
     name: "Nexo Scans",
     baseUrl: "https://nexoscans.net",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/nexoscans/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/nexoscans/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "en_us");

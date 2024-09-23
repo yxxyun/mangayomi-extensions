@@ -5,9 +5,9 @@ Source _comicasoSource = Source(
     name: "Comicaso",
     baseUrl: "https://comicaso.com",
     lang: "id",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/comicaso/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"id"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/comicaso/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "id");

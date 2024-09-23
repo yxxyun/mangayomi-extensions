@@ -7,7 +7,7 @@ const _batotoSourceCodeUrl =
 String _iconUrl =
     "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/src/all/batoto/icon.png";
 const _baseUrl = 'https://bato.to';
-const _isNsfw = true;
+const _isNsfw = false;
 
 List<String> _languages = [
   "all",

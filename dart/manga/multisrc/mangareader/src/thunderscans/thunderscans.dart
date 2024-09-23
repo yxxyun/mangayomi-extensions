@@ -5,9 +5,9 @@ Source _thunderscansSource = Source(
     name: "Thunder Scans",
     baseUrl: "https://ar-thunderepic.com",
     lang: "all",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/thunderscans/icon.png",
-    dateFormat:"MMM d, yyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/thunderscans/icon.png",
+    dateFormat: "MMM d, yyy",
+    dateFormatLocale: "ar");

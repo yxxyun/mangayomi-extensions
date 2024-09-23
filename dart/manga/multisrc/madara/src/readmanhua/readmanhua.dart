@@ -5,9 +5,9 @@ Source _readmanhuaSource = Source(
     name: "ReadManhua",
     baseUrl: "https://readmanhua.net",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/readmanhua/icon.png",
-    dateFormat:"dd MMM yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/readmanhua/icon.png",
+    dateFormat: "dd MMM yyyy",
+    dateFormatLocale: "en_us");

@@ -5,7 +5,7 @@ Source _funtoonsSource = Source(
     name: "FunToons",
     baseUrl: "https://funtoons.online",
     lang: "th",
-    isNsfw: true,
+    isNsfw: false,
     typeSource: "mangareader",
     iconUrl:
         "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/funtoons/icon.png",

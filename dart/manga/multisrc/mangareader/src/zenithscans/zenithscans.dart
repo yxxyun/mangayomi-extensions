@@ -5,9 +5,9 @@ Source _zenithscansSource = Source(
     name: "Zenith Scans",
     baseUrl: "https://zenithscans.com",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/zenithscans/icon.png",
-    dateFormat:"MMM d, yyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/zenithscans/icon.png",
+    dateFormat: "MMM d, yyy",
+    dateFormatLocale: "tr");

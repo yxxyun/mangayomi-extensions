@@ -6,7 +6,7 @@ Source _mihentaiSource = Source(
   name: "Mihentai",
   baseUrl: "https://mihentai.com",
   lang: "all",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "mangareader",
   iconUrl:
       "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/mihentai/icon.png",

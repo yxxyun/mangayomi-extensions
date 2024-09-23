@@ -5,9 +5,9 @@ Source _manhwadashrawSource = Source(
     name: "Manhwa-raw",
     baseUrl: "https://manhwa-raw.com",
     lang: "all",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhwadashraw/icon.png",
-    dateFormat:"dd/MM/yyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhwadashraw/icon.png",
+    dateFormat: "dd/MM/yyy",
+    dateFormatLocale: "en");

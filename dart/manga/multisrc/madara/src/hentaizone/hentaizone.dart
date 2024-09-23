@@ -6,8 +6,8 @@ Source _hentaizoneSource = Source(
   name: "HentaiZone",
   baseUrl: "https://hentaizone.xyz",
   lang: "fr",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "madara",
   iconUrl:
-      "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/madara/src/hentaizone/icon.png",
+      "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/madara/src/hentaizone/icon.png",
 );

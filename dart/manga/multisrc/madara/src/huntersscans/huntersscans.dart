@@ -5,9 +5,9 @@ Source _huntersscansSource = Source(
     name: "Hunters Scan",
     baseUrl: "https://huntersscan.xyz",
     lang: "pt-br",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/huntersscans/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/huntersscans/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "pt-br");

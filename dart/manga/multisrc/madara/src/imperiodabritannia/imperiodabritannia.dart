@@ -5,9 +5,9 @@ Source _imperiodabritanniaSource = Source(
     name: "Sagrado Império da Britannia",
     baseUrl: "https://imperiodabritannia.com",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/imperiodabritannia/icon.png",
-    dateFormat:"dd 'de' MMMMM 'de' yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/imperiodabritannia/icon.png",
+    dateFormat: "dd 'de' MMMMM 'de' yyyy",
+    dateFormatLocale: "pt-br");

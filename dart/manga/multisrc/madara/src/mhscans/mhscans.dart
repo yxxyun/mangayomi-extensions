@@ -5,9 +5,9 @@ Source _mhscansSource = Source(
     name: "MHScans",
     baseUrl: "https://lectormh.com",
     lang: "es",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mhscans/icon.png",
-    dateFormat:"dd 'de' MMMM 'de' yyyy",
-    dateFormatLocale:"es"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mhscans/icon.png",
+    dateFormat: "dd 'de' MMMM 'de' yyyy",
+    dateFormatLocale: "es");

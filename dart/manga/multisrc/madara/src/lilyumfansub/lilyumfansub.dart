@@ -5,9 +5,9 @@ Source _lilyumfansubSource = Source(
     name: "LilyumFansub",
     baseUrl: "https://lilyumfansub.com.tr",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/lilyumfansub/icon.png",
-    dateFormat:"MMMM dd yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/lilyumfansub/icon.png",
+    dateFormat: "MMMM dd yyyy",
+    dateFormatLocale: "tr");

@@ -5,9 +5,9 @@ Source _globalblogingSource = Source(
     name: "Global Bloging",
     baseUrl: "https://globalbloging.com",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/globalbloging/icon.png",
-    dateFormat:"dd MMMM yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/globalbloging/icon.png",
+    dateFormat: "dd MMMM yyyy",
+    dateFormatLocale: "en_us");

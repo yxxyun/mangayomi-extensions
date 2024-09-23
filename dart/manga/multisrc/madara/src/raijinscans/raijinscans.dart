@@ -5,9 +5,9 @@ Source _raijinscansSource = Source(
     name: "Raijin Scans",
     baseUrl: "https://raijinscans.com",
     lang: "fr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/raijinscans/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"fr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/raijinscans/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "fr");

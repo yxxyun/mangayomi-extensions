@@ -5,9 +5,9 @@ Source _senpaiedicionesSource = Source(
     name: "Senpai Ediciones",
     baseUrl: "https://senpaiediciones.com",
     lang: "es",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/senpaiediciones/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"es"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/senpaiediciones/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "es");

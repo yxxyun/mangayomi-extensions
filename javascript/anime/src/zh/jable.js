@@ -6,7 +6,7 @@ const mangayomiSources = [{
   "iconUrl": "https://assets-cdn.jable.tv/assets/icon/favicon-32x32.png",
   "typeSource": "single",
   "isManga": false,
-  "isNsfw": true,
+  "isNsfw": false,
   "version": "0.0.2",
   "dateFormat": "",
   "dateFormatLocale": "",

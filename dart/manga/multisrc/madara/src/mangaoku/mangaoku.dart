@@ -5,9 +5,9 @@ Source _mangaokuSource = Source(
     name: "Manga Oku",
     baseUrl: "https://mangaoku.info",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaoku/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaoku/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "tr");

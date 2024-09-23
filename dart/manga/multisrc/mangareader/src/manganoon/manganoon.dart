@@ -5,9 +5,9 @@ Source _manganoonSource = Source(
     name: "مانجا نون",
     baseUrl: "https://manjanoon.org",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/manganoon/icon.png",
-    dateFormat:"MMM d, yyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/manganoon/icon.png",
+    dateFormat: "MMM d, yyy",
+    dateFormatLocale: "ar");

@@ -5,9 +5,9 @@ Source _arabtoonsSource = Source(
     name: "عرب تونز",
     baseUrl: "https://arabtoons.net",
     lang: "ar",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/arabtoons/icon.png",
-    dateFormat:"MMM d",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/arabtoons/icon.png",
+    dateFormat: "MMM d",
+    dateFormatLocale: "ar");

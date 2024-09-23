@@ -7,10 +7,10 @@ Source _omegascansSource = Source(
   baseUrl: "https://omegascans.org",
   apiUrl: "https://api.omegascans.org",
   lang: "en",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "heancms",
   iconUrl:
-      "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/heancms/src/omegascans/icon.png",
+      "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/heancms/src/omegascans/icon.png",
   dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ",
   dateFormatLocale: "en",
 );

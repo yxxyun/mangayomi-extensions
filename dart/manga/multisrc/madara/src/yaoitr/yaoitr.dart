@@ -5,9 +5,9 @@ Source _yaoitrSource = Source(
     name: "Yaoi TR",
     baseUrl: "https://yaoitr.fun",
     lang: "tr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/yaoitr/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/yaoitr/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "tr");

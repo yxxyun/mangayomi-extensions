@@ -5,9 +5,9 @@ Source _hoifansubSource = Source(
     name: "Hoi Fansub",
     baseUrl: "https://hoifansub.com",
     lang: "tr",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hoifansub/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hoifansub/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "tr");

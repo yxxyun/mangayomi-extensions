@@ -5,9 +5,9 @@ Source _inmoralnofansubSource = Source(
     name: "Inmoral No Fansub",
     baseUrl: "https://inmoralnofansub.xyz",
     lang: "es",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/inmoralnofansub/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"es"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/inmoralnofansub/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "es");

@@ -5,9 +5,9 @@ Source _guncelmangaSource = Source(
     name: "GuncelManga",
     baseUrl: "https://guncelmanga.net",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/guncelmanga/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/guncelmanga/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "tr");

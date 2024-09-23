@@ -5,9 +5,9 @@ Source _kingsmangaSource = Source(
     name: "Kings-Manga",
     baseUrl: "https://www.kings-manga.co",
     lang: "th",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/kingsmanga/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"th"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/kingsmanga/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "th");

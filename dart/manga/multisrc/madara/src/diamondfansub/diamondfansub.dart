@@ -5,9 +5,9 @@ Source _diamondfansubSource = Source(
     name: "DiamondFansub",
     baseUrl: "https://diamondfansub.com",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/diamondfansub/icon.png",
-    dateFormat:"d MMMM",
-    dateFormatLocale:"tr-tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/diamondfansub/icon.png",
+    dateFormat: "d MMMM",
+    dateFormatLocale: "tr-tr");

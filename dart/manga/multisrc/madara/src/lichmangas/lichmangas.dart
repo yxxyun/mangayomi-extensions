@@ -5,9 +5,9 @@ Source _lichmangasSource = Source(
     name: "Lich Mangas",
     baseUrl: "https://lichmangas.com",
     lang: "pt-br",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/lichmangas/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/lichmangas/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "en");

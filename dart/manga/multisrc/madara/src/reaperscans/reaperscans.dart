@@ -5,9 +5,9 @@ Source _reaperscansSource = Source(
     name: "Reaper Scans",
     baseUrl: "https://reaperscans.com",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/reaperscans/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/reaperscans/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "en_us");

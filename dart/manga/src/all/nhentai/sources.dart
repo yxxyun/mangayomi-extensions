@@ -7,7 +7,7 @@ const _nhentaiSourceCodeUrl =
 String _iconUrl =
     "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/src/all/nhentai/icon.png";
 const _baseUrl = 'https://nhentai.net';
-const _isNsfw = true;
+const _isNsfw = false;
 
 List<String> _languages = ["all", "en", "zh", "ja"];
 

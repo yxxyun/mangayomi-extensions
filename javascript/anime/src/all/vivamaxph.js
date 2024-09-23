@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://vivamaxph.com/wp-content/uploads/2024/02/logo2-1.png",
     "typeSource": "single",
     "isManga": false,
-    "isNsfw": true,
+    "isNsfw": false,
     "version": "0.0.1",
     "dateFormat": "",
     "dateFormatLocale": "",

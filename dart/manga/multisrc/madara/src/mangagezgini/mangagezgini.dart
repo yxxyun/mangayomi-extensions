@@ -5,9 +5,9 @@ Source _mangagezginiSource = Source(
     name: "MangaGezgini",
     baseUrl: "https://mangagezgini.com",
     lang: "tr",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangagezgini/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"tr"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangagezgini/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "tr");

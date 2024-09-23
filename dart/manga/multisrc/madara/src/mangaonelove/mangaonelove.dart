@@ -5,9 +5,9 @@ Source _mangaoneloveSource = Source(
     name: "Manga One Love",
     baseUrl: "https://mangaonelove.site",
     lang: "ru",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaonelove/icon.png",
-    dateFormat:"dd.MM.yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaonelove/icon.png",
+    dateFormat: "dd.MM.yyyy",
+    dateFormatLocale: "en_us");

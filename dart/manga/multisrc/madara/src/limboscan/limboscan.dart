@@ -5,9 +5,9 @@ Source _limboscanSource = Source(
     name: "Limbo Scan",
     baseUrl: "https://limboscan.com.br",
     lang: "pt-br",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/limboscan/icon.png",
-    dateFormat:"dd/MM/yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/limboscan/icon.png",
+    dateFormat: "dd/MM/yyyy",
+    dateFormatLocale: "pt-br");

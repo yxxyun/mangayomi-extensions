@@ -5,9 +5,9 @@ Source _mangaflameSource = Source(
     name: "Manga Flame",
     baseUrl: "https://mangaflame.org",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/mangaflame/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/mangaflame/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "ar");

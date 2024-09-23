@@ -5,9 +5,9 @@ Source _mangalinkSource = Source(
     name: "مانجا لينك",
     baseUrl: "https://manga-link.com",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangalink/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangalink/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "ar");

@@ -5,9 +5,9 @@ Source _komikgueSource = Source(
     name: "Komik Gue",
     baseUrl: "https://komikgue.pro",
     lang: "id",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/komikgue/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"id"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/komikgue/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "id");

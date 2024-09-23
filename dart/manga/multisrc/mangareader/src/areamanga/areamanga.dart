@@ -5,9 +5,9 @@ Source _areamangaSource = Source(
     name: "أريا مانجا",
     baseUrl: "https://www.areascans.net",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/areamanga/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/areamanga/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "ar");

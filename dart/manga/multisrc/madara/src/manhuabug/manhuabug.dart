@@ -5,9 +5,9 @@ Source _manhuabugSource = Source(
     name: "ManhuaBug",
     baseUrl: "https://www.manhuabug.com",
     lang: "th",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhuabug/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhuabug/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "en");

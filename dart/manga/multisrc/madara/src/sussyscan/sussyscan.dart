@@ -5,9 +5,9 @@ Source _sussyscanSource = Source(
     name: "Sussy Scan",
     baseUrl: "https://sussyscan.com",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/sussyscan/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/sussyscan/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "pt-br");

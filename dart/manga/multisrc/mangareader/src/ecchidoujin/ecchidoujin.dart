@@ -5,9 +5,9 @@ Source _ecchidoujinSource = Source(
     name: "Ecchi-Doujin",
     baseUrl: "https://ecchi-doujin.com",
     lang: "th",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/ecchidoujin/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"th"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/ecchidoujin/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "th");

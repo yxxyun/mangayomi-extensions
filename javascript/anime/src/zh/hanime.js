@@ -6,7 +6,7 @@ const mangayomiSources = [{
   "iconUrl": "https://vdownload.hembed.com/image/icon/tab_logo.png?secure=EJYLwnrDlidVi_wFp3DaGw==,4867726124",
   "typeSource": "single",
   "isManga": false,
-  "isNsfw": true,
+  "isNsfw": false,
   "version": "0.0.2",
   "dateFormat": "",
   "dateFormatLocale": "",

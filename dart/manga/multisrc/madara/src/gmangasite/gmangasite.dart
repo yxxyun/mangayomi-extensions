@@ -5,9 +5,9 @@ Source _gmangasiteSource = Source(
     name: "GMANGA (unoriginal)",
     baseUrl: "https://gmanga.site",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/gmangasite/icon.png",
-    dateFormat:"MMMM dd، yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/gmangasite/icon.png",
+    dateFormat: "MMMM dd، yyyy",
+    dateFormatLocale: "ar");

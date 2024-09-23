@@ -5,9 +5,9 @@ Source _mangaschanSource = Source(
     name: "Mangás Chan",
     baseUrl: "https://mangaschan.net",
     lang: "pt-br",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/mangaschan/icon.png",
-    dateFormat:"MMMMM dd, yyyy",
-    dateFormatLocale:"pt-br"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/mangaschan/icon.png",
+    dateFormat: "MMMMM dd, yyyy",
+    dateFormatLocale: "pt-br");

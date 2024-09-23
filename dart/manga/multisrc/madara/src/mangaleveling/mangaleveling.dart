@@ -5,9 +5,9 @@ Source _mangalevelingSource = Source(
     name: "Manga Leveling",
     baseUrl: "https://mangaleveling.com",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaleveling/icon.png",
-    dateFormat:"MM/dd/yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangaleveling/icon.png",
+    dateFormat: "MM/dd/yyyy",
+    dateFormatLocale: "en_us");

@@ -5,9 +5,9 @@ Source _mangafastcomSource = Source(
     name: "Manga-fast.com",
     baseUrl: "https://manga-fast.com",
     lang: "en",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangafastcom/icon.png",
-    dateFormat:"d MMMM'،' yyyy",
-    dateFormatLocale:"en_us"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangafastcom/icon.png",
+    dateFormat: "d MMMM'،' yyyy",
+    dateFormatLocale: "en_us");

@@ -5,9 +5,9 @@ Source _mangatimeSource = Source(
     name: "Manga Time",
     baseUrl: "https://mangatime.us",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangatime/icon.png",
-    dateFormat:"dd MMMM، yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/mangatime/icon.png",
+    dateFormat: "dd MMMM، yyyy",
+    dateFormatLocale: "ar");

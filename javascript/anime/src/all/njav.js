@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://njav.tv/assets/njav/images/favicon.png",
     "typeSource": "single",
     "isManga": false,
-    "isNsfw": true,
+    "isNsfw": false,
     "version": "0.0.1",
     "apiUrl": "",
     "dateFormat": "",

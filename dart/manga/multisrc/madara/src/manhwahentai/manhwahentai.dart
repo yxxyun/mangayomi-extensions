@@ -5,9 +5,9 @@ Source _manhwahentaiSource = Source(
     name: "Manhwa Hentai",
     baseUrl: "https://manhwahentai.to",
     lang: "en",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhwahentai/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"eb"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/manhwahentai/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "eb");

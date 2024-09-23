@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://cdn-msp.jmcomic.me/media/logo/new_logo.png?v=2024043002",
     "typeSource": "single",
     "isManga": true,
-    "isNsfw": true,
+    "isNsfw": false,
     "version": "0.0.15",
     "dateFormat": "",
     "dateFormatLocale": "",

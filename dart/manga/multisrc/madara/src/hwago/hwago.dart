@@ -5,9 +5,9 @@ Source _hwagoSource = Source(
     name: "Hwago",
     baseUrl: "https://hwago.org",
     lang: "id",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hwago/icon.png",
-    dateFormat:"d MMMM yyyy",
-    dateFormatLocale:"en"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/hwago/icon.png",
+    dateFormat: "d MMMM yyyy",
+    dateFormatLocale: "en");

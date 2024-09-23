@@ -5,9 +5,9 @@ Source _olaoeSource = Source(
     name: "Olaoe",
     baseUrl: "https://olaoe.cyou",
     lang: "ar",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/olaoe/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"ar"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/olaoe/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "ar");

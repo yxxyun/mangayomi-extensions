@@ -6,7 +6,7 @@ Source _manhwaxSource = Source(
   name: "Manhwax",
   baseUrl: "https://manhwax.com",
   lang: "en",
-  isNsfw: true,
+  isNsfw: false,
   typeSource: "mangareader",
   iconUrl:
       "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/manhwax/icon.png",

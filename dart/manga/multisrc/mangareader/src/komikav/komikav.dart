@@ -5,9 +5,9 @@ Source _komikavSource = Source(
     name: "APKOMIK",
     baseUrl: "https://apkomik.cc",
     lang: "id",
-    isNsfw:false,
+    isNsfw: false,
     typeSource: "mangareader",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/komikav/icon.png",
-    dateFormat:"MMMM dd, yyyy",
-    dateFormatLocale:"id"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/komikav/icon.png",
+    dateFormat: "MMMM dd, yyyy",
+    dateFormatLocale: "id");

@@ -5,9 +5,9 @@ Source _doujinlcSource = Source(
     name: "Doujin-Lc",
     baseUrl: "https://doujin-lc.net",
     lang: "th",
-    isNsfw:true,
+    isNsfw: false,
     typeSource: "madara",
-    iconUrl: "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/doujinlc/icon.png",
-    dateFormat:"MMMM d, yyyy",
-    dateFormatLocale:"th"
-  );
+    iconUrl:
+        "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/bbranchNamee/dart/manga/multisrc/madara/src/doujinlc/icon.png",
+    dateFormat: "MMMM d, yyyy",
+    dateFormatLocale: "th");
