@@ -3,7 +3,7 @@ const mangayomiSources = [{
   "lang": "zh",
   "baseUrl": "https://www.manhuadb.com",
   "apiUrl": "",
-  "iconUrl": "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/main/javascript/icon/zh.manhuadb.png",
+  "iconUrl": "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/main/javascript/icon/zh.manhuadb.png",
   "typeSource": "single",
   "isManga": true,
   "isNsfw": false,

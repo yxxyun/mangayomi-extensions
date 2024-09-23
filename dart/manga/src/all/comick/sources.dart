@@ -2,10 +2,10 @@ import '../../../../../model/source.dart';
 
 const _comickVersion = "0.0.75";
 const _comickSourceCodeUrl =
-    "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/src/all/comick/comick.dart";
+    "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/src/all/comick/comick.dart";
 
 String _iconUrl =
-    "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/src/all/comick/icon.png";
+    "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/src/all/comick/icon.png";
 const _apiUrl = 'https://api.comick.fun';
 const _baseUrl = 'https://comick.app';
 const _isNsfw = false;

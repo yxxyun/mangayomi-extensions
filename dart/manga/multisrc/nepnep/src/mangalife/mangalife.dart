@@ -8,7 +8,7 @@ Source _mangalifeSource = Source(
   lang: "en",
   typeSource: "nepnep",
   iconUrl:
-      "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/nepnep/src/mangalife/icon.png",
+      "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/nepnep/src/mangalife/icon.png",
   dateFormat: "yyyy-MM-dd HH:mm:ss",
   dateFormatLocale: "en",
 );

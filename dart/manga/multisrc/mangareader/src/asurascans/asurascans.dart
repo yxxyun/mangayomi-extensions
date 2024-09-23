@@ -8,7 +8,7 @@ Source _asurascansSource = Source(
   lang: "en",
   typeSource: "mangareader",
   iconUrl:
-      "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/asurascans/icon.png",
+      "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/dart/manga/multisrc/mangareader/src/asurascans/icon.png",
   dateFormat: "MMM d, yyyy",
   dateFormatLocale: "en_us",
 );
