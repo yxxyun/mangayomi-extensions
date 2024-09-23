@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://aosikazy1.com/template/m1938pc3/image/favicon.ico",
     "typeSource": "single",
     "isManga": false,
-    "isNsfw": true,
+    "isNsfw": false,
     "version": "0.0.1",
     "dateFormat": "",
     "dateFormatLocale": "",
