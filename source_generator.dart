@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-import 'dart/anime/anime_source_list.dart';
-import 'dart/manga/manga_source_list.dart';
+// import 'dart/anime/anime_source_list.dart';
+// import 'dart/manga/manga_source_list.dart';
 import 'model/source.dart';
 
 void main() {
@@ -13,7 +13,7 @@ void main() {
 
 void genManga(List<Source> jsMangasourceList) {
   List<Source> mangaSources = [];
-  mangaSources.addAll(dartMangasourceList);
+  // mangaSources.addAll(dartMangasourceList);
   mangaSources.addAll(jsMangasourceList);
   final List<Map<String, dynamic>> jsonList =
       mangaSources.map((source) => source.toJson()).toList();
@@ -27,7 +27,7 @@ void genManga(List<Source> jsMangasourceList) {
 
 void genAnime(List<Source> jsAnimesourceList) {
   List<Source> animeSources = [];
-  animeSources.addAll(dartAnimesourceList);
+  // animeSources.addAll(dartAnimesourceList);
   animeSources.addAll(jsAnimesourceList);
   final List<Map<String, dynamic>> jsonList =
       animeSources.map((source) => source.toJson()).toList();
