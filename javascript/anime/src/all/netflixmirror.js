@@ -6,6 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/main/javascript/icon/all.netflixmirror.png",
     "typeSource": "single",
     "isManga": false,
+    "isNsfw": false,
     "version": "0.0.15",
     "dateFormat": "",
     "dateFormatLocale": "",
