@@ -60,7 +60,7 @@ List<Source> _searchJsSources(Directory dir) {
                   ..sourceCodeLanguage = 1
                   ..appMinVerReq = defaultSource.appMinVerReq
                   ..sourceCodeUrl =
-                      "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/javascript/${e["pkgPath"] ?? e["pkgName"]}")
+                      "https://ghp.ci/https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/javascript/${e["pkgPath"] ?? e["pkgName"]}")
                 .toList());
           }
         }
