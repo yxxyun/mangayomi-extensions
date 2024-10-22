@@ -7,7 +7,7 @@ const mangayomiSources = [{
     "typeSource": "single",
     "isManga": false,
     "isNsfw": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/jisuzy.js"
@@ -111,9 +111,10 @@ class DefaultExtension extends MProvider {
     }
     // For anime episode video list
     async getVideoList(url) {
+        const proxyUrl = await getProxyUrl();
         return [{
-            url: url,
-            originalUrl: url,
+            url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
+            originalUrl: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
             quality: "HLS"
         }];
     }
