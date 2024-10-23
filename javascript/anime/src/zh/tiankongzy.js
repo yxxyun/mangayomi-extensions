@@ -95,19 +95,19 @@ class DefaultExtension extends MProvider {
         const content = this.text(anime.vod_content);
         desc = desc.length < blurb?.length ? blurb : desc;
         desc = desc.length < content.length ? content : desc;
-        
+
         const playLists = anime.vod_play_url.split("$$$");
         const urls = [];
-    
+
         for (const playList of playLists) {
             const episodes = playList.split("#").filter(e => e);
-            
+
             for (const episode of episodes) {
                 const [name, episodeUrl] = episode.split("$");
-                
+
                 if (episodeUrl.includes("m3u8")) {
                     urls.push({ name, url: episodeUrl });
-                } 
+                }
             }
         }
         return {
