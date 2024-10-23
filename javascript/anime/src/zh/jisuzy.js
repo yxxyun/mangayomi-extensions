@@ -103,8 +103,9 @@ class DefaultExtension extends MProvider {
             const episodes = playList.split("#").filter(e => e);
 
             for (const episode of episodes) {
-                const [name, episodeUrl] = episode.split("$");
-
+                const parts = episode.split("$");
+                const name = parts[0];
+                const episodeUrl = parts[1];
                 if (episodeUrl.includes("m3u8")) {
                     urls.push({ name, url: episodeUrl });
                 }
