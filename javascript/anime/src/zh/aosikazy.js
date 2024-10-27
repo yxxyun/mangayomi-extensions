@@ -112,11 +112,18 @@ class DefaultExtension extends MProvider {
     // For anime episode video list
     async getVideoList(url) {
         const proxyUrl = await getProxyUrl();
-        return [{
-            url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
-            originalUrl: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
-            quality: "HLS"
-        }];
+        return [
+            {
+                url: url,
+                originalUrl: url,
+                quality: "HLS"
+            },
+            {
+                url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
+                originalUrl: url,
+                quality: "去广告"
+            }
+        ];
     }
     // For manga chapter pages
     async getPageList() {
