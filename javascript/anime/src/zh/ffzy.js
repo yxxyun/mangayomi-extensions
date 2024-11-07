@@ -7,7 +7,7 @@ const mangayomiSources = [{
     "typeSource": "single",
     "isManga": false,
     "isNsfw": false,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/ffzy.js"
@@ -120,6 +120,14 @@ class DefaultExtension extends MProvider {
     }
     // For anime episode video list
     async getVideoList(url) {
+        const regStr = [
+            "#EXT-X-DISCONTINUITY(?:\n(?!#EXT-X-DISCONTINUITY).*){10}\n#EXT-X-DISCONTINUITY",
+            "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF.*?\\s+[a-z0-9]{18}\\.ts[\\s\\S]*?#EXT-X-DISCONTINUITY",
+            "#EXTINF.*?\\s+.*?1171.*?\\.ts\\s+",
+            "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5.033333,[\\s\\S]*?#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3.960000",
+            "\\s+(#EXT-X-DISCONTINUITY).{188,281}\\1"
+        ].join("@@"); // 使用 @@ 作为分隔符
+
         const proxyUrl = await getProxyUrl();
         return [
             {
@@ -128,7 +136,7 @@ class DefaultExtension extends MProvider {
                 quality: "HLS"
             },
             {
-                url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
+                url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}&rule=${encodeURIComponent(regStr)}`,
                 originalUrl: url,
                 quality: "去广告"
             }
