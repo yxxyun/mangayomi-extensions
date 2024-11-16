@@ -7,7 +7,7 @@ const mangayomiSources = [{
     "typeSource": "single",
     "isManga": false,
     "isNsfw": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/labipan.js"
@@ -61,19 +61,29 @@ class DefaultExtension extends MProvider {
                     categories = filter["values"][filter["state"]]["value"];
                 }
             }
-            const response = await new Client({ 'useDartHttpClient': true }).get(baseUrl + `/index.php/vod/show/id/${categories}/page/${page}.html`, { "Referer": baseUrl });
-            const elements = new Document(response.body).select("div.module-item");
-            const list = [];
-            for (const element of elements) {
-                let oneA = element.selectFirst('.module-item-cover .module-item-pic a');
-                const name = oneA.attr("title");
-                const imageUrl = element.selectFirst(".module-item-cover .module-item-pic img").attr("data-src");
-                const link = oneA.attr("href");
-                list.push({ name, imageUrl, link });
-            }
-            return {
-                list: list,
-                hasNextPage: true
+            if (categories == "0") {
+                const list = [];
+                list.push({ name: "夸克", link: "https://quark.cn" });
+                list.push({ name: "UC", link: "https://uc.cn" });
+                return {
+                    list: list,
+                    hasNextPage: false
+                }
+            } else {
+                const response = await new Client({ 'useDartHttpClient': true }).get(baseUrl + `/index.php/vod/show/id/${categories}/page/${page}.html`, { "Referer": baseUrl });
+                const elements = new Document(response.body).select("div.module-item");
+                const list = [];
+                for (const element of elements) {
+                    let oneA = element.selectFirst('.module-item-cover .module-item-pic a');
+                    const name = oneA.attr("title");
+                    const imageUrl = element.selectFirst(".module-item-cover .module-item-pic img").attr("data-src");
+                    const link = oneA.attr("href");
+                    list.push({ name, imageUrl, link });
+                }
+                return {
+                    list: list,
+                    hasNextPage: true
+                }
             }
         } else {
             const response = await new Client({ 'useDartHttpClient': true }).get(baseUrl + `/index.php/vod/search/page/${page}/wd/${query}.html`, { "Referer": baseUrl });
@@ -93,35 +103,47 @@ class DefaultExtension extends MProvider {
         }
     }
     async getDetail(url) {
-        const baseUrl = new SharedPreferences().get("url");
-        const response = await new Client({ 'useDartHttpClient': true }).get(baseUrl + url, { "Referer": baseUrl });
-        const document = new Document(response.body);
-        const imageUrl = document.selectFirst("div.video-cover .module-item-cover .module-item-pic img").attr("data-src");
-        const name = document.selectFirst("div.video-info .video-info-header h1").text;
-        const description = document.selectFirst("div.video-info .video-info-content").text.replace("[收起部分]", "").replace("[展开全部]", "");
-        const type_name = "电影";
-        let quark_share_url_list = [], uc_share_url_list = []
-        const share_url_list = document.select("div.module-row-one .module-row-info")
-            .map(e => {
-                const url = e.selectFirst(".module-row-title p").text;
-                const quarkMatches = url.match(this.patternQuark);
+        if (url.includes("quark.cn")) {
+            return {
+                name: "夸克",
+                description: "本页面用于清除夸克cookie，点击webview然后右上角点击清除cookie。",
+            }
+        } else if (url.includes("uc.cn")) {
+            return {
+                name: "UC",
+                description: "本页面用于清除UC云盘cookie，点击webview然后右上角点击清除cookie。",
+            }
+        } else {
+            const baseUrl = new SharedPreferences().get("url");
+            const response = await new Client({ 'useDartHttpClient': true }).get(baseUrl + url, { "Referer": baseUrl });
+            const document = new Document(response.body);
+            const imageUrl = document.selectFirst("div.video-cover .module-item-cover .module-item-pic img").attr("data-src");
+            const name = document.selectFirst("div.video-info .video-info-header h1").text;
+            const description = document.selectFirst("div.video-info .video-info-content").text.replace("[收起部分]", "").replace("[展开全部]", "");
+            const type_name = "电影";
+            let quark_share_url_list = [], uc_share_url_list = []
+            const share_url_list = document.select("div.module-row-one .module-row-info")
+                .map(e => {
+                    const url = e.selectFirst(".module-row-title p").text;
+                    const quarkMatches = url.match(this.patternQuark);
 
-                if (quarkMatches && quarkMatches[1]) {
-                    quark_share_url_list.push(quarkMatches[1]);
-                }
-                const ucMatches = url.match(this.patternUc);
-                if (ucMatches && ucMatches[1]) {
-                    uc_share_url_list.push(ucMatches[1]);
-                }
-                return null;
-            })
-            .filter(url => url !== null);
-        let quark_episodes = await quarkFilesExtractor(quark_share_url_list, new SharedPreferences().get("quarkCookie"));
-        let uc_episodes = await ucFilesExtractor(uc_share_url_list, new SharedPreferences().get("ucCookie"));
-        let episodes = [...quark_episodes, ...uc_episodes];
-        return {
-            name, imageUrl, description, episodes
-        };
+                    if (quarkMatches && quarkMatches[1]) {
+                        quark_share_url_list.push(quarkMatches[1]);
+                    }
+                    const ucMatches = url.match(this.patternUc);
+                    if (ucMatches && ucMatches[1]) {
+                        uc_share_url_list.push(ucMatches[1]);
+                    }
+                    return null;
+                })
+                .filter(url => url !== null);
+            let quark_episodes = await quarkFilesExtractor(quark_share_url_list, new SharedPreferences().get("quarkCookie"));
+            let uc_episodes = await ucFilesExtractor(uc_share_url_list, new SharedPreferences().get("ucCookie"));
+            let episodes = [...quark_episodes, ...uc_episodes];
+            return {
+                name, imageUrl, description, episodes
+            };
+        }
     }
     // For anime episode video list
     async getVideoList(url) {
@@ -164,7 +186,8 @@ class DefaultExtension extends MProvider {
                 { type_name: "SelectOption", value: "3", name: "动漫" },
                 { type_name: "SelectOption", value: "4", name: "综艺" },
                 { type_name: "SelectOption", value: "5", name: "短剧" },
-                { type_name: "SelectOption", value: "24", name: "4K" }
+                { type_name: "SelectOption", value: "24", name: "4K" },
+                { type_name: "SelectOption", value: "0", name: "网盘" }
             ]
         }];
     }
