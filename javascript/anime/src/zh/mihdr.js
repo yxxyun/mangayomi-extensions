@@ -1,13 +1,13 @@
 const mangayomiSources = [{
-    "name": "米盘搜",
+    "name": "至臻视觉",
     "lang": "zh",
-    "baseUrl": "http://mpanso.com",
+    "baseUrl": "https://mihdr.top",
     "apiUrl": "",
-    "iconUrl": "http://mpanso.com/upload/dycms/20240708-1/9150a85ec594c1e7b14619e6570d7ee4.png",
+    "iconUrl": "https://mihdr.top/upload/dycms/20240708-1/9150a85ec594c1e7b14619e6570d7ee4.png",
     "typeSource": "single",
     "isManga": false,
     "isNsfw": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/mihdr.js"
@@ -196,13 +196,13 @@ class DefaultExtension extends MProvider {
                     "title": "Website Url",
                     "summary": "",
                     "valueIndex": 0,
-                    "entries": [
-                        "mpanso.com",
+                    "entries": [                        
                         "mihdr.top",
+                        "mpanso.com",
                     ],
-                    "entryValues": [
-                        "http://mpanso.com",
+                    "entryValues": [                        
                         "https://mihdr.top",
+                        "http://mpanso.com",
                     ],
                 }
             }
