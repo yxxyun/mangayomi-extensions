@@ -54,7 +54,8 @@ List<Source> _searchJsSources(Directory dir) {
               final langs = sourceJson["langs"] as List?;
               Source source = Source.fromJson(sourceJson)
                 ..sourceCodeLanguage = 1
-                ..appMinVerReq = defaultSource.appMinVerReq
+                ..appMinVerReq =
+                    sourceJson["appMinVerReq"] ?? defaultSource.appMinVerReq
                 ..sourceCodeUrl =
                     "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName/javascript/${sourceJson["pkgPath"] ?? sourceJson["pkgName"]}";
               if (sourceJson["id"] != null) {
