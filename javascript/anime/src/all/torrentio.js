@@ -6,7 +6,7 @@ const mangayomiSources = [{
     "iconUrl": "https://ghp.ci/raw.githubusercontent.com/kodjodevf/mangayomi-extensions/main/javascript/icon/all.torrentio.png",
     "typeSource": "torrent",
     "isManga": false,
-    "version": "0.0.1",
+    "version": "0.0.25",
     "appMinVerReq": "0.3.8",
     "pkgPath": "anime/src/all/torrentio.js"
 }];
@@ -84,7 +84,7 @@ class DefaultExtension extends MProvider {
     }
     async searchAnimeRequest(page, query) {
         const preferences = new SharedPreferences();
-        const country = preferences.get("jw_region");
+        const country = preferences.get("jw_region1");
         const language = preferences.get("jw_lang");
         const perPage = 40;
         const year = 0;
@@ -161,14 +161,14 @@ class DefaultExtension extends MProvider {
                 case "show":
                     const videos = meta.videos || [];
                     return videos
+                        .filter(video => (video.firstAired ? new Date(video.firstAired) : Date.now()) < Date.now())
                         .map(video => {
-                            const firstAired = video.firstAired ? new Date(video.firstAired) : new Date();
+                            const firstAired = video.firstAired ? new Date(video.firstAired) : Date.now();
 
                             return {
                                 url: `/stream/series/${video.id}.json`,
                                 dateUpload: firstAired.valueOf().toString(),
                                 name: `S${(video.season || "").toString().trim()}:E${(video.number || "").toString()} - ${video.name || ""}`,
-                                scanlator: firstAired > Date.now() ? "Upcoming" : ""
                             };
                         })
                         .sort((a, b) => {
@@ -197,29 +197,26 @@ class DefaultExtension extends MProvider {
         return anime;
     }
 
+    appendQueryParam(key, values) {
+        let url = "";
+        if (values && values.length > 0) {
+            const filteredValues = Array.from(values).filter(value => value.trim() !== "").join(",");
+            url += `${key}=${filteredValues}|`;
+        }
+        return url;
+    };
     async getVideoList(url) {
         const preferences = new SharedPreferences();
 
         let mainURL = `${this.source.baseUrl}/`;
-
-        const appendQueryParam = (key, values) => {
-            if (values && values.size > 0) {
-                const filteredValues = Array.from(values).filter(value => value.trim() !== "").join(",");
-                mainURL += `${key}=${filteredValues}|`;
-            }
-        };
-
-        appendQueryParam("providers", preferences.get("provider_selection"));
-        appendQueryParam("language", preferences.get("lang_selection"));
-        appendQueryParam("qualityfilter", preferences.get("quality_selection"));
-        appendQueryParam("sort", new Set([preferences.get("sorting_link")]));
-
-
+        mainURL += this.appendQueryParam("providers", preferences.get("provider_selection1"));
+        mainURL += this.appendQueryParam("language", preferences.get("lang_selection"));
+        mainURL += this.appendQueryParam("qualityfilter", preferences.get("quality_selection"));
+        mainURL += this.appendQueryParam("sort", new Set([preferences.get("sorting_link")]));
         mainURL += url;
         mainURL = mainURL.replace(/\|$/, "");
         const responseEpisodes = await this.client.get(mainURL);
         const streamList = JSON.parse(responseEpisodes.body);
-
         const animeTrackers = `
         http://nyaa.tracker.wf:7777/announce,
         http://anidex.moe:6969/announce,http://tracker.anirena.com:80/announce,
@@ -316,7 +313,7 @@ class DefaultExtension extends MProvider {
                 }
             },
             {
-                "key": "provider_selection",
+                "key": "provider_selection1",
                 "multiSelectListPreference": {
                     "title": "Enable/Disable Providers",
                     "summary": "",
@@ -361,7 +358,25 @@ class DefaultExtension extends MProvider {
                         "mejortorrent",
                         "cinecalidad"],
                     "values": [
-                        "nyaasi",]
+                        "yts",
+                        "eztv",
+                        "rarbg",
+                        "1337x",
+                        "thepiratebay",
+                        "kickasstorrents",
+                        "torrentgalaxy",
+                        "magnetdl",
+                        "horriblesubs",
+                        "nyaasi",
+                        "tokyotosho",
+                        "anidex",
+                        "rutor",
+                        "rutracker",
+                        "comando",
+                        "bludv",
+                        "torrent9",
+                        "mejortorrent",
+                        "cinecalidad"]
                 }
             },
             {
@@ -529,11 +544,11 @@ class DefaultExtension extends MProvider {
                 }
             },
             {
-                "key": "jw_region",
+                "key": "jw_region1",
                 "listPreference": {
                     "title": "Catalogue Region",
                     "summary": "Region based catalogue recommendation.",
-                    "valueIndex": 133,
+                    "valueIndex": 132,
                     "entries": [
                         "Albania", "Algeria", "Androrra", "Angola", "Antigua and Barbuda", "Argentina", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Barbados", "Belarus", "Belgium", "Belize", "Bermuda", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Bulgaria", "Burkina Faso", "Cameroon", "Canada", "Cape Verde", "Chad", "Chile", "Colombia", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "DR Congo", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Estonia", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "Germany", "Ghana", "Gibraltar", "Greece", "Guatemala", "Guernsey", "Guyana", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kenya", "Kosovo", "Kuwait", "Latvia", "Lebanon", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Mali", "Malta", "Mauritius", "Mexico", "Moldova", "Monaco", "Montenegro", "Morocco", "Mozambique", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Saint Lucia", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sweden", "Switzerland", "Taiwan", "Tanzania", "Thailand", "Trinidad and Tobago", "Tunisia", "Turkey", "Turks and Caicos Islands", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Vatican City", "Venezuela", "Yemen", "Zambia", "Zimbabwe"],
                     "entryValues": [
