@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "https://cdn-msp.jmcomic.me/media/logo/new_logo.png?v=2024043002",
     "typeSource": "single",
-    "isManga": true,
+    "itemType": 0,
     "isNsfw": false,
-    "version": "0.0.15",
+    "version": "0.0.2",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "manga/src/zh/jmcomic.js"

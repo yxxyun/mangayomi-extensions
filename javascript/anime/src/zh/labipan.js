@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "http://labipan.com/upload/dycms/20240530-1/9b409f92d6516bcbcf35f3131cb93ac2.jpg",
     "typeSource": "single",
-    "isManga": false,
+    "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.3",
+    "version": "0.0.35",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/labipan.js"

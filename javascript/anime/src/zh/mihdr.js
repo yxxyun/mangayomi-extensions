@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "https://mihdr.top/upload/dycms/20240708-1/9150a85ec594c1e7b14619e6570d7ee4.png",
     "typeSource": "single",
-    "isManga": false,
+    "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.2",
+    "version": "0.0.25",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/mihdr.js"

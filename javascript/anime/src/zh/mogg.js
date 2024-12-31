@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "http://mogg.top/template/DYXS2/static/picture/logo.png",
     "typeSource": "single",
-    "isManga": false,
+    "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.1",
+    "version": "0.0.15",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/mogg.js"

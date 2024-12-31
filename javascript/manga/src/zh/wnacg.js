@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "https://www.wnacg.com/favicon.ico",
     "typeSource": "single",
-    "isManga": true,
+    "itemType": 0,
     "isNsfw": false,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "manga/src/zh/wnacg.js"

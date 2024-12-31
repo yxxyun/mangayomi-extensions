@@ -5,9 +5,9 @@ const mangayomiSources = [{
     "apiUrl": "",
     "iconUrl": "http://www.mucpan.cc/template/DYXS2/static/picture/index_logo.png",
     "typeSource": "single",
-    "isManga": false,
+    "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.2",
+    "version": "0.0.25",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/mucpan.js"

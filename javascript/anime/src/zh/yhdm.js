@@ -5,9 +5,9 @@ const mangayomiSources = [{
   "apiUrl": "",
   "iconUrl": "http://www.iyinghua.com/js/20180601/favicon.ico",
   "typeSource": "single",
-  "isManga": false,
+  "itemType": 1,
   "isNsfw": false,
-  "version": "0.0.2",
+  "version": "0.0.25",
   "dateFormat": "",
   "dateFormatLocale": "",
   "pkgPath": "anime/src/zh/yhdm.js"
