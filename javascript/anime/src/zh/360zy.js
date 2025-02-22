@@ -7,7 +7,7 @@ const mangayomiSources = [{
     "typeSource": "single",
     "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.3",
+    "version": "0.0.4",
     "dateFormat": "",
     "dateFormatLocale": "",
     "pkgPath": "anime/src/zh/360zy.js"
@@ -111,17 +111,11 @@ class DefaultExtension extends MProvider {
     }
     // For anime episode video list
     async getVideoList(url) {
-        const proxyUrl = await getProxyUrl();
         return [
             {
                 url: url,
                 originalUrl: url,
                 quality: "HLS"
-            },
-            {
-                url: `${proxyUrl}/proxy?url=${encodeURIComponent(url)}`,
-                originalUrl: url,
-                quality: "去广告"
             }
         ];
     }
