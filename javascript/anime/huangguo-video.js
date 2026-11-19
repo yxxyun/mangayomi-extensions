@@ -7,7 +7,7 @@ const mangayomiSources = [{
     "typeSource": "single",
     "itemType": 1,
     "isNsfw": true,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "dateFormat": "",
     "dateFormatLocale": "",
     "hasCloudflare": true
@@ -964,6 +964,49 @@ function categoryOf(filterList) {
     return "";
 }
 
+
+/// Resolves a media address to something a plain player can use, the way the
+/// reference player does it: fetch the playlist with the same headers the
+/// segments need, require it to be a playlist, and if it is a master, replace
+/// it with the highest bandwidth variant.
+///
+/// Returns the address to play. A playlist that is not one raises, instead of
+/// handing the player a page it will silently fail on.
+async function resolveMediaAddress(address, headers) {
+    const res = await new Client({ 'useDartHttpClient': true }).get(address, headers);
+    const body = String(res.body || "").replace(/^\uFEFF/, "").trim();
+
+    if (!body.startsWith("#EXTM3U")) {
+        // Not a playlist: the address is a direct file, or the site refused.
+        if (res.statusCode !== 200) {
+            throw new Error("站点未返回播放列表（HTTP " + res.statusCode + "）");
+        }
+        return address;
+    }
+
+    if (body.indexOf("#EXT-X-STREAM-INF") < 0) {
+        // A media playlist already: exactly what the player wants.
+        return address;
+    }
+
+    // A master playlist: pick the best variant and play that, so the player
+    // never has to resolve the ladder itself.
+    let best = null;
+    const lines = body.split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line.startsWith("#EXT-X-STREAM-INF")) continue;
+        const bandwidth = parseInt((line.match(/BANDWIDTH=(\d+)/) || [])[1] || "0", 10);
+        const next = (lines[i + 1] || "").trim();
+        if (next === "" || next.startsWith("#")) continue;
+        if (best === null || bandwidth > best.bandwidth) {
+            best = { bandwidth: bandwidth, uri: next };
+        }
+    }
+    if (best === null) return address;
+    return resolveUrlLocal(address, best.uri);
+}
+
 // ── The provider ───────────────────────────────────────────────────────────
 
 class DefaultExtension extends MProvider {
@@ -1093,6 +1136,13 @@ class DefaultExtension extends MProvider {
         const parsed = parseAddress(media.url);
         const isPlaylist = parsed && parsed.path.toLowerCase().endsWith(".m3u8");
         if (isPlaylist) {
+            try {
+                // Resolve a master to its best variant before proxying, so the
+                // player gets one stream rather than a ladder it must walk.
+                media.url = await resolveMediaAddress(media.url, headers);
+            } catch (error) {
+                // Keep the original address.
+            }
             try {
                 finalUrl = await createHlsProxyUrl(media.url, headers);
             } catch (error) {
