@@ -106,4 +106,13 @@ class Source {
 
 const branchName = "back";
 
+/// Where the published catalogue lives. The GitHub Pages site serves this
+/// repository's `back` branch verbatim, so the indexes and the sources they
+/// point at share one host — a source installs even when
+/// raw.githubusercontent.com is unreachable.
+///
+/// To go back to raw links, use:
+///   https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/$branchName
+const jsBaseUrl = "https://yxxyun.github.io/mangayomi-extensions";
+
 enum ItemType { manga, anime, novel }

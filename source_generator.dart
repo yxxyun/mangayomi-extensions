@@ -87,10 +87,8 @@ List<Source> _sourcesInFile(File file, {required String root}) {
       ..sourceCodeLanguage = 1
       ..appMinVerReq = map["appMinVerReq"] ?? defaultSource.appMinVerReq
       // Derived, never hand-written: the URL has to match the file that is
-      // actually in the repository.
-      ..sourceCodeUrl =
-          "https://raw.githubusercontent.com/yxxyun/mangayomi-extensions/"
-          "$branchName/javascript/$relative";
+      // actually in the repository, and it is served from the published base.
+      ..sourceCodeUrl = "$jsBaseUrl/javascript/$relative";
     if (map["itemType"] == null) {
       source.itemType = switch (typeDir) {
         'anime' => ItemType.anime,
