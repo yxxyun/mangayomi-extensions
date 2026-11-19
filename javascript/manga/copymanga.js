@@ -9,8 +9,7 @@ const mangayomiSources = [{
     "isNsfw": false,
     "version": "0.0.3",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "manga/src/zh/copymanga.js"
+    "dateFormatLocale": ""
   }];
   
   class DefaultExtension extends MProvider {
@@ -538,7 +537,7 @@ const mangayomiSources = [{
               name: "真人",
               value: "zhenren"
             },
-          ],
+          ]
         },
         {
           type: "region",
@@ -569,7 +568,7 @@ const mangayomiSources = [{
               name: "完结",
               value: "finish"
             },
-          ],
+          ]
         },
         {
           type: "sort",
@@ -595,7 +594,7 @@ const mangayomiSources = [{
               name: "热度⬆️",
               value: "popular"
             },
-          ],
+          ]
         },
       ];
     }

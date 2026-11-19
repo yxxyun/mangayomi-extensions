@@ -9,8 +9,7 @@ const mangayomiSources = [{
     "isNsfw": false,
     "version": "0.0.2",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "manga/src/zh/jmcomic.js"
+    "dateFormatLocale": ""
   }];
   
   class DefaultExtension extends MProvider {

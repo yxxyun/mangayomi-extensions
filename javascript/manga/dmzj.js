@@ -9,8 +9,7 @@ const mangayomiSources = [{
     "isNsfw": false,
     "version": "0.0.3",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "manga/src/zh/dmzj.js"
+    "dateFormatLocale": ""
   }];
   
   class DefaultExtension extends MProvider {
@@ -343,7 +342,7 @@ const mangayomiSources = [{
             "summary": "设置后可以解锁部分漫画",
             "value": "2665531",
             "dialogTitle": "UID",
-            "dialogMessage": "",
+            "dialogMessage": ""
           }
         },
         {

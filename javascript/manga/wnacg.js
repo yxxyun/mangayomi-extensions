@@ -9,8 +9,7 @@ const mangayomiSources = [{
     "isNsfw": false,
     "version": "0.0.3",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "manga/src/zh/wnacg.js"
+    "dateFormatLocale": ""
 }];
 
 class DefaultExtension extends MProvider {
@@ -424,7 +423,7 @@ class DefaultExtension extends MProvider {
                 "summary": "用于读取用户收藏的Cookies（MPIC_bnS5）",
                 "value": "",
                 "dialogTitle": "Cookies",
-                "dialogMessage": "",
+                "dialogMessage": ""
             }
         }];
     }

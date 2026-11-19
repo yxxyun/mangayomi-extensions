@@ -9,8 +9,7 @@ const mangayomiSources = [{
     "isNsfw": false,
     "version": "0.0.2",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "anime/src/zh/jisuzy.js"
+    "dateFormatLocale": ""
 }];
 
 class DefaultExtension extends MProvider {
@@ -188,7 +187,7 @@ class DefaultExtension extends MProvider {
                     "summary": "",
                     "valueIndex": 0,
                     "entries": ["jisuzy.com", "jisuzy.tv", "jisuziyuan.com"],
-                    "entryValues": ["https://www.jisuzy.com", "https://www.jisuzy.tv", "https://www.jisuziyuan.com"],
+                    "entryValues": ["https://www.jisuzy.com", "https://www.jisuzy.tv", "https://www.jisuziyuan.com"]
                 }
             }
         ];

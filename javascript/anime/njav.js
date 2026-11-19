@@ -329,7 +329,7 @@ const mangayomiSources = [{
             "summary": "",
             "valueIndex": 0,
             "entries": ["English", "繁體中文", "日本語", "한국의", "Melayu", "ไทย", "Deutsch", "Français", "Tiếng Việt"],
-            "entryValues": ["en", "zh", "ja", "ko", "ms", "th", "de", "fr", "vi"],
+            "entryValues": ["en", "zh", "ja", "ko", "ms", "th", "de", "fr", "vi"]
           }
         },
         {
@@ -339,7 +339,7 @@ const mangayomiSources = [{
             "summary": "",
             "valueIndex": 0,
             "entries": ["njav", "missav", "javgo", "supjav"],
-            "entryValues": ["https://njav.xyz", "https://missav.li", "https://www.javgo.to", "https://supjav.pro"],
+            "entryValues": ["https://njav.xyz", "https://missav.li", "https://www.javgo.to", "https://supjav.pro"]
           }
         }
       ];

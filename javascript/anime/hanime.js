@@ -10,7 +10,6 @@ const mangayomiSources = [{
   "version": "0.0.25",
   "dateFormat": "",
   "dateFormatLocale": "",
-  "pkgPath": "anime/src/zh/hanime.js",
   "hasCloudflare": true
 }];
 
@@ -27,7 +26,7 @@ class DefaultExtension extends MProvider {
     return timestamp;
   }
 
-  async getItems(url, type) {
+  async getItems(url, type, page) {
     const res = await new Client({'useDartHttpClient': true}).get(this.source.baseUrl + url);
     const doc = new Document(res.body);
     const items = [];
@@ -44,11 +43,18 @@ class DefaultExtension extends MProvider {
         });
       }
     } else {
-      const elements = doc.selectFirst("div.content-padding-new").selectFirst("div.row").select("div.col-xs-6");
+      // The site dropped div.col-xs-6; results are div.video-item-container and
+      // sponsored rows point away from /watch, so keep only site links.
+      const elements = doc
+        .selectFirst("div.content-padding-new")
+        .select("div.video-item-container");
       for (const element of elements) {
-        const url = element.selectFirst("a").attr("href");
-        const title = element.selectFirst("div.card-mobile-title").text;
-        const cover = element.select("img")[1].attr("src");
+        const anchor = element.selectFirst("a.video-link");
+        if (!anchor) continue;
+        const url = anchor.attr("href");
+        if (!url || url.indexOf("/watch") == -1) continue;
+        const title = element.selectFirst("div.title").text.trim();
+        const cover = element.selectFirst("img.main-thumb").attr("src");
         items.push({
           name: title,
           imageUrl: cover,
@@ -56,18 +62,31 @@ class DefaultExtension extends MProvider {
         });
       }
     }
+    // Ask the pager instead of always saying "more": the site renders
+    // a.page-link for every reachable page and drops it on the last one.
+    const current = parseInt(page, 10) || 1;
+    let hasNextPage = false;
+    for (const link of doc.select("a.page-link")) {
+      const href = link.attr("href");
+      if (!href) continue;
+      const m = /[?&]page=(\d{1,6})/.exec(href);
+      if (m && parseInt(m[1], 10) > current) {
+        hasNextPage = true;
+        break;
+      }
+    }
     return {
       list: items,
-      hasNextPage: true
+      hasNextPage: hasNextPage
     };
   }
 
   async getPopular(page) {
-    return await this.getItems(`/search?sort=%E8%A7%80%E7%9C%8B%E6%AC%A1%E6%95%B8&page=${page}`, 1);
+    return await this.getItems(`/search?sort=%E8%A7%80%E7%9C%8B%E6%AC%A1%E6%95%B8&page=${page}`, 1, page);
   }
 
   async getLatestUpdates(page) {
-    return await this.getItems(`/search?sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%B8%82&page=${page}`, 1);
+    return await this.getItems(`/search?sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%B8%82&page=${page}`, 1, page);
   }
 
   async search(query, page, filters) {
@@ -102,11 +121,18 @@ class DefaultExtension extends MProvider {
     const adddate = this.dateStringToTimestamp(doc.selectFirst("div.video-details-wrapper").text.split("  ")[1]);
     const author = doc.selectFirst("a#video-artist-name").text.replaceAll("\n", "").trim(" ");
     const tags = doc.select("div.single-video-tag a ").map(e => e.text).slice(0, -2);
-    const eps_ = doc.selectFirst("div#video-playlist-wrapper").select("div#playlist-scroll div.related-watch-wrap");
+    // The playlist entries are .playlist-hover-wrap now, with the link in
+    // .thumb-container a and the title in h4.video-title.
+    const eps_ = doc
+      .selectFirst("div#playlist-scroll")
+      .select("div.playlist-hover-wrap");
     const eps = [];
     for (const ep of eps_) {
-      const name = ep.selectFirst("div.card-mobile-title").text;
-      const url = ep.selectFirst("a.overlay").attr("href");
+      const titleEl = ep.selectFirst("h4.video-title");
+      const name = (titleEl ? titleEl.text : "").trim();
+      const linkEl = ep.selectFirst("div.thumb-container a") || ep.selectFirst("a");
+      const url = linkEl ? linkEl.attr("href") : "";
+      if (!url) continue;
       eps.push({
         name: name,
         url: url,
@@ -125,27 +151,38 @@ class DefaultExtension extends MProvider {
   }
 
   async getVideoList(url) {
-    const res = await new Client({'useDartHttpClient': true}).get(url);
+    const res = await new Client({ 'useDartHttpClient': true }).get(url);
     const doc = new Document(res.body);
-    const sources = doc.select("source");
-    if (sources.length==0) {
-        const url =   res.body.match(/"contentUrl": "(.+?)"/)[1];
-        return [{
-            url: url,
-            originalUrl: url,
-            quality: "Origin"            
-            }];            
-    }  
     const results = [];
-    for (const source of sources) {
-      const url = source.attr("src");
-      const quality = source.attr("size") + "P";
+    const seen = new Set();
+    // The page carries the MP4 ladder as <source> tags whose size attribute is
+    // the vertical resolution. Keep only the media host the site itself uses:
+    // ad slots reuse the same markup with other hosts.
+    for (const source of doc.select("source")) {
+      const src = source.attr("src");
+      if (!src || seen.has(src)) continue;
+      // No URL() in this runtime: check the address by hand.
+      if (!/^https:\/\/vdownload\.hembed\.com\/[^?#]+\.mp4(?:[?#]|$)/i.test(src)) continue;
+      seen.add(src);
+      const size = parseInt(source.attr("size"), 10);
       results.push({
-        url: url,
-        originalUrl: url,
-        quality: quality
+        url: src,
+        originalUrl: src,
+        quality: size > 0 ? size + "P" : "Origin"
       });
     }
+    if (results.length === 0) {
+      const fallback = res.body.match(/"contentUrl":\s*"([^"]+)"/);
+      if (fallback) {
+        results.push({
+          url: fallback[1],
+          originalUrl: fallback[1],
+          quality: "Origin"
+        });
+      }
+    }
+    // Highest resolution first, the way the player's quality menu expects.
+    results.sort((a, b) => (parseInt(b.quality, 10) || 0) - (parseInt(a.quality, 10) || 0));
     return results;
   }
 

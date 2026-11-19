@@ -1,16 +1,15 @@
 const mangayomiSources = [{
-    "name": "360资源",
+    "name": "奥斯卡资源站",
     "lang": "zh",
-    "baseUrl": "https://360zy.com",
+    "baseUrl": "https://aosikazy1.com",
     "apiUrl": "",
-    "iconUrl": "https://360zy.com/favicon.ico",
+    "iconUrl": "https://aosikazy1.com/template/m1938pc3/image/favicon.ico",
     "typeSource": "single",
     "itemType": 1,
     "isNsfw": false,
-    "version": "0.0.1",
+    "version": "0.0.4",
     "dateFormat": "",
-    "dateFormatLocale": "",
-    "pkgPath": "anime/src/zh/360zy.js"
+    "dateFormatLocale": ""
 }];
 
 class DefaultExtension extends MProvider {
@@ -111,11 +110,13 @@ class DefaultExtension extends MProvider {
     }
     // For anime episode video list
     async getVideoList(url) {
-        return [{
-            url: url,
-            originalUrl: url,
-            quality: "HLS"
-        }];
+        return [
+            {
+                url: url,
+                originalUrl: url,
+                quality: "HLS"
+            }
+        ];
     }
     // For manga chapter pages
     async getPageList() {
@@ -131,53 +132,34 @@ class DefaultExtension extends MProvider {
                 // { type_name: "SelectOption", value: "2", name: "连续剧" },
                 // { type_name: "SelectOption", value: "3", name: "综艺" },
                 { type_name: "SelectOption", value: "", name: "全部" },
-                { type_name: "SelectOption", value: "5", name: "伦理片" },
-                { type_name: "SelectOption", value: "6", name: "动作片" },
-                { type_name: "SelectOption", value: "7", name: "喜剧片" },
-                { type_name: "SelectOption", value: "8", name: "爱情片" },
-                { type_name: "SelectOption", value: "9", name: "科幻片" },
-                { type_name: "SelectOption", value: "10", name: "恐怖片" },
-                { type_name: "SelectOption", value: "11", name: "剧情片" },
-                { type_name: "SelectOption", value: "12", name: "战争片" },
-                { type_name: "SelectOption", value: "13", name: "国产剧" },
-                { type_name: "SelectOption", value: "14", name: "香港剧" },
-                { type_name: "SelectOption", value: "15", name: "韩国剧" },
-                { type_name: "SelectOption", value: "16", name: "欧美剧" },
-                { type_name: "SelectOption", value: "17", name: "体育" },
-                { type_name: "SelectOption", value: "18", name: "NBA" },
-                { type_name: "SelectOption", value: "20", name: "惊悚片" },
-                { type_name: "SelectOption", value: "21", name: "家庭篇" },
-                { type_name: "SelectOption", value: "22", name: "古装片" },
-                { type_name: "SelectOption", value: "23", name: "历史片" },
-                { type_name: "SelectOption", value: "24", name: "悬疑片" },
-                { type_name: "SelectOption", value: "25", name: "犯罪片" },
-                { type_name: "SelectOption", value: "26", name: "灾难片" },
-                { type_name: "SelectOption", value: "27", name: "纪录片" },
-                { type_name: "SelectOption", value: "28", name: "短片" },
-                { type_name: "SelectOption", value: "29", name: "动画片" },
-                { type_name: "SelectOption", value: "30", name: "台湾剧" },
-                { type_name: "SelectOption", value: "31", name: "日本剧" },
-                { type_name: "SelectOption", value: "32", name: "海外剧" },
-                { type_name: "SelectOption", value: "33", name: "泰国剧" },
-                { type_name: "SelectOption", value: "34", name: "大陆综艺" },
-                { type_name: "SelectOption", value: "35", name: "港台综艺" },
-                { type_name: "SelectOption", value: "36", name: "日韩综艺" },
-                { type_name: "SelectOption", value: "37", name: "欧美综艺" },
-                { type_name: "SelectOption", value: "38", name: "国产动漫" },
-                { type_name: "SelectOption", value: "39", name: "欧美动漫" },
-                { type_name: "SelectOption", value: "40", name: "日韩动漫" },
-                { type_name: "SelectOption", value: "41", name: "足球" },
-                { type_name: "SelectOption", value: "42", name: "篮球" },
-                { type_name: "SelectOption", value: "43", name: "未分类" },
-                { type_name: "SelectOption", value: "45", name: "西部片" },
-                { type_name: "SelectOption", value: "46", name: "爽文短剧" },
-                { type_name: "SelectOption", value: "47", name: "现代都市" },
-                { type_name: "SelectOption", value: "48", name: "脑洞悬疑" },
-                { type_name: "SelectOption", value: "49", name: "年代穿越" },
-                { type_name: "SelectOption", value: "50", name: "古装仙侠" },
-                { type_name: "SelectOption", value: "51", name: "反转爽剧" },
-                { type_name: "SelectOption", value: "52", name: "女频恋爱" },
-                { type_name: "SelectOption", value: "53", name: "成长逆袭" }
+                { type_name: "SelectOption", value: "20", name: "国产视频" },
+                { type_name: "SelectOption", value: "21", name: "中文字幕" },
+                { type_name: "SelectOption", value: "22", name: "国产传媒" },
+                { type_name: "SelectOption", value: "23", name: "日本有码" },
+                { type_name: "SelectOption", value: "24", name: "日本无码" },
+                { type_name: "SelectOption", value: "25", name: "欧美无码" },
+                { type_name: "SelectOption", value: "26", name: "强奸乱伦" },
+                { type_name: "SelectOption", value: "27", name: "制服诱惑" },
+                { type_name: "SelectOption", value: "28", name: "国产主播" },
+                { type_name: "SelectOption", value: "29", name: "激情动漫" },
+                { type_name: "SelectOption", value: "30", name: "明星换脸" },
+                { type_name: "SelectOption", value: "31", name: "抖阴视频" },
+                { type_name: "SelectOption", value: "32", name: "女优明星" },
+                { type_name: "SelectOption", value: "33", name: "视频一区" },
+                { type_name: "SelectOption", value: "34", name: "视频二区" },
+                { type_name: "SelectOption", value: "35", name: "网曝黑料" },
+                { type_name: "SelectOption", value: "36", name: "视频三区" },
+                { type_name: "SelectOption", value: "37", name: "伦理三级" },
+                { type_name: "SelectOption", value: "38", name: "AV解说" },
+                { type_name: "SelectOption", value: "39", name: "SM调教" },
+                { type_name: "SelectOption", value: "40", name: "萝莉少女" },
+                { type_name: "SelectOption", value: "41", name: "极品媚黑" },
+                { type_name: "SelectOption", value: "42", name: "女同性恋" },
+                { type_name: "SelectOption", value: "43", name: "网红头条" },
+                { type_name: "SelectOption", value: "44", name: "视频四区" },
+                { type_name: "SelectOption", value: "45", name: "人妖系列" },
+                { type_name: "SelectOption", value: "46", name: "韩国主播" },
+                { type_name: "SelectOption", value: "47", name: "VR视角" }
             ]
         }];
     }
@@ -189,8 +171,8 @@ class DefaultExtension extends MProvider {
                     "title": "Website Url",
                     "summary": "",
                     "valueIndex": 0,
-                    "entries": ["360zycom", "360zynet", "360zytop", "360zytv"],
-                    "entryValues": ["https://360zy.com", "https://360zy.net", "https://360zy.top", "https://360zy.tv"],
+                    "entries": ["aosikazy1", "aosikazy2", "aosikazy3", "aosikazy4", "aosikazy5", "aosikazy6", "aosikazy7", "aosikazy8", "aosikazy9", "aosikazy10"],
+                    "entryValues": ["https://aosikazy1.com", "https://aosikazy2.com", "https://aosikazy3.com", "https://aosikazy4.com", "https://aosikazy5.com", "https://aosikazy6.com", "https://aosikazy7.com", "https://aosikazy8.com", "https://aosikazy9.com", "https://aosikazy10.com"]
                 }
             }
         ];

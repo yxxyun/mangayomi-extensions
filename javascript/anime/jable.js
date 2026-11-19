@@ -10,7 +10,6 @@ const mangayomiSources = [{
   "version": "0.0.25",
   "dateFormat": "",
   "dateFormatLocale": "",
-  "pkgPath": "anime/src/zh/jable.js",
   "hasCloudflare": true
 }];
 
