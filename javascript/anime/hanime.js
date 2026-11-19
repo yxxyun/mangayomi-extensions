@@ -7,7 +7,7 @@ const mangayomiSources = [{
   "typeSource": "single",
   "itemType": 1,
   "isNsfw": false,
-  "version": "0.0.25",
+  "version": "0.0.26",
   "dateFormat": "",
   "dateFormatLocale": "",
   "hasCloudflare": true
