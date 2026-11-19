@@ -674,11 +674,46 @@ function mediaCredentials(headers, address, expiration) {
 }
 
 
+/// The value the reader picked in the category filter.
+function categoryOf(filterList) {
+    for (const filter of filterList || []) {
+        if (!filter || filter.type !== "categories") continue;
+        const values = filter.values || [];
+        if (values.length === 0) continue;
+        const state = typeof filter.state === "number" ? filter.state : 0;
+        const pick = values[state] || values[0];
+        return pick ? String(pick.value || "") : "";
+    }
+    return "";
+}
+
 // ── The provider ───────────────────────────────────────────────────────────
 
 class DefaultExtension extends MProvider {
+    _categories = null;
+
     get baseUrl() {
         return this.source.baseUrl;
+    }
+
+    /// Read once per session; the filter sheet needs it synchronously.
+    async loadCategories() {
+        if (this._categories != null) return this._categories;
+        const all = await this.getCategories();
+        // The api hands back every tag it knows, hundreds of them; a picker
+        // that long is unusable, so keep the ones the site lists first and
+        // drop duplicates by name.
+        const seen = new Set([""]);
+        const kept = [{ id: "", name: "全部" }];
+        for (const entry of all) {
+            const name = String(entry.name || "").trim();
+            if (name === "" || seen.has(name)) continue;
+            seen.add(name);
+            kept.push(entry);
+            if (kept.length >= 60) break;
+        }
+        this._categories = kept;
+        return kept;
     }
 
     async getCategories() {
@@ -708,17 +743,24 @@ class DefaultExtension extends MProvider {
     }
 
     async getPopular(page) {
+        await this.loadCategories();
         const result = await fetchCatalogPage(page, "", "");
         return { list: this.toList(result.items), hasNextPage: result.hasMore };
     }
 
     async getLatestUpdates(page) {
+        await this.loadCategories();
         const result = await fetchCatalogPage(page, newestCategory, "");
         return { list: this.toList(result.items), hasNextPage: result.hasMore };
     }
 
     async search(query, page, filters) {
-        const result = await fetchCatalogPage(page, "", String(query || "").trim());
+        await this.loadCategories();
+        const keyword = String(query || "").trim();
+        // With no keyword the filter sheet drives it: a category pick browses
+        // that category, no pick browses what is popular.
+        const category = keyword === "" ? categoryOf(filters) : "";
+        const result = await fetchCatalogPage(page, category, keyword);
         return { list: this.toList(result.items), hasNextPage: result.hasMore };
     }
 
@@ -804,7 +846,19 @@ class DefaultExtension extends MProvider {
     }
 
     getFilterList() {
-        return { filters: [] };
+        // The app evaluates this synchronously, so it reports what the last
+        // load read. Opening the source fills the list in.
+        const categories = this._categories || [{ id: "", name: "全部" }];
+        return [{
+            type: "categories",
+            name: "分类",
+            type_name: "SelectFilter",
+            values: categories.map((c) => ({
+                type_name: "SelectOption",
+                name: c.name,
+                value: c.id,
+            })),
+        }];
     }
 
     getSourcePreferences() {

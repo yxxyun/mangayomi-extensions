@@ -951,9 +951,24 @@ function addressOrigin(address) {
 }
 
 
+/// The value the reader picked in the category filter.
+function categoryOf(filterList) {
+    for (const filter of filterList || []) {
+        if (!filter || filter.type !== "categories") continue;
+        const values = filter.values || [];
+        if (values.length === 0) continue;
+        const state = typeof filter.state === "number" ? filter.state : 0;
+        const pick = values[state] || values[0];
+        return pick ? String(pick.value || "") : "";
+    }
+    return "";
+}
+
 // ── The provider ───────────────────────────────────────────────────────────
 
 class DefaultExtension extends MProvider {
+    _categories = null;
+
     get baseUrl() {
         return this.source.baseUrl;
     }
@@ -961,6 +976,13 @@ class DefaultExtension extends MProvider {
     async fetchPage(address, referer) {
         const body = await fetchText(address, referer || siteBaseUrl + "/");
         return { body: body, url: address };
+    }
+
+    /// Read once per session; the filter sheet needs it synchronously.
+    async loadCategories() {
+        if (this._categories != null) return this._categories;
+        this._categories = await this.getCategories();
+        return this._categories;
     }
 
     async getCategories() {
@@ -1010,16 +1032,20 @@ class DefaultExtension extends MProvider {
     }
 
     async getPopular(page) {
+        await this.loadCategories();
         return await this.catalogPage(page, "");
     }
 
     async getLatestUpdates(page) {
+        await this.loadCategories();
         return await this.catalogPage(page, "");
     }
 
     async search(query, page, filters) {
-        // The site has no text search; its catalogue is category based.
-        return await this.catalogPage(page, "");
+        // The site has no text search; its catalogue is category based, so the
+        // filter sheet is the only thing that narrows it.
+        await this.loadCategories();
+        return await this.catalogPage(page, categoryOf(filters));
     }
 
     async getDetail(url) {
@@ -1059,8 +1085,24 @@ class DefaultExtension extends MProvider {
             // Without a token the address may still play; let the player try.
         }
 
+        // The player sends no custom headers of its own, so a plain address
+        // would load the playlist and then fail on every segment that needs
+        // the token. Route the playlist through the app's proxy, which carries
+        // these headers on to the segments and keys.
+        let finalUrl = media.url;
+        const parsed = parseAddress(media.url);
+        const isPlaylist = parsed && parsed.path.toLowerCase().endsWith(".m3u8");
+        if (isPlaylist) {
+            try {
+                finalUrl = await createHlsProxyUrl(media.url, headers);
+            } catch (error) {
+                // No proxy available: the address is all that is left.
+                finalUrl = media.url;
+            }
+        }
+
         return [{
-            url: media.url,
+            url: finalUrl,
             originalUrl: media.url,
             quality: "Origin",
             headers: headers,
@@ -1076,7 +1118,19 @@ class DefaultExtension extends MProvider {
     }
 
     getFilterList() {
-        return { filters: [] };
+        // The app evaluates this synchronously, so it reports what the last
+        // load read. Opening the source fills the list in.
+        const categories = this._categories || [{ id: "", name: "全部" }];
+        return [{
+            type: "categories",
+            name: "分类",
+            type_name: "SelectFilter",
+            values: categories.map((c) => ({
+                type_name: "SelectOption",
+                name: c.name,
+                value: c.id,
+            })),
+        }];
     }
 
     getSourcePreferences() {

@@ -443,9 +443,24 @@ function decryptMediaUrl(raw, encrypt) {
     return decoded;
 }
 
+/// The value the reader picked in the category filter.
+function categoryOf(filterList) {
+    for (const filter of filterList || []) {
+        if (!filter || filter.type !== "categories") continue;
+        const values = filter.values || [];
+        if (values.length === 0) continue;
+        const state = typeof filter.state === "number" ? filter.state : 0;
+        const pick = values[state] || values[0];
+        return pick ? String(pick.value || "") : "";
+    }
+    return "";
+}
+
 // ── The provider ───────────────────────────────────────────────────────────
 
 class DefaultExtension extends MProvider {
+    _categories = null;
+
     get baseUrl() {
         return this.source.baseUrl;
     }
@@ -475,15 +490,49 @@ class DefaultExtension extends MProvider {
     }
 
     async getPopular(page) {
+        await this.loadCategories();
         return await this.fetchCatalogPage(page, "", "");
     }
 
     async getLatestUpdates(page) {
+        await this.loadCategories();
         return await this.fetchCatalogPage(page, "", "");
     }
 
     async search(query, page, filters) {
-        return await this.fetchCatalogPage(page, "", query);
+        query = String(query || "").trim();
+        // Browsing a category arrives here with an empty query and the
+        // category picked in the filter sheet.
+        await this.loadCategories();
+        const category = query === "" ? categoryOf(filters) : "";
+        return await this.fetchCatalogPage(page, category, query);
+    }
+
+    /// The site's content categories, read from its own navigation, cached for
+    /// the session. The filter sheet itself is evaluated synchronously by the
+    /// app, so it can only report what has been read already; the first load
+    /// of the source fills this in.
+    async loadCategories() {
+        if (this._categories != null) return this._categories;
+        if (this._categories != null) return this._categories;
+        const list = [{ id: "", name: "全部" }];
+        try {
+            const result = await this.fetchPage(siteBaseUrl + "/");
+            const seen = new Set();
+            for (const anchor of htmlNodes(result.document, tagged("a"))) {
+                const route = routeParameters(result.pageUrl, htmlAttr(anchor, "href"));
+                const id = route ? route.values.id || "" : "";
+                const name = htmlText(anchor).trim();
+                if (!route || route.action !== "type" || !validCategory(id) || id === "") continue;
+                if (name === "" || Array.from(name).length > 48 || seen.has(id)) continue;
+                seen.add(id);
+                list.push({ id: id, name: name });
+            }
+        } catch (error) {
+            // A filter sheet without categories still browses; keep "全部".
+        }
+        this._categories = list;
+        return list;
     }
 
     async getDetail(url) {
@@ -559,7 +608,17 @@ class DefaultExtension extends MProvider {
     }
 
     getFilterList() {
-        return { filters: [] };
+        const categories = this._categories || [{ id: "", name: "全部" }];
+        return [{
+            type: "categories",
+            name: "分类",
+            type_name: "SelectFilter",
+            values: categories.map((c) => ({
+                type_name: "SelectOption",
+                name: c.name,
+                value: c.id,
+            })),
+        }];
     }
 
     getSourcePreferences() {
